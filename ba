@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class jumpbat : MonoBehaviour
+{
+    public float Jumpfactor = 2.5f;
+    //увелечение скорости
+    void OnTriggerEnter(Collider other)
+    {
+        other.GetComponent<Jump>().jumpStrength *= Jumpfactor;
+    }
+    //уменьшение скорости
+    void OnTriggerExit(Collider other)
+
+    {
+        other.GetComponent<Jump>().jumpStrength /= Jumpfactor;
+    }
+}
